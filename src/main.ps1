@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Menu principal que chama scripts de ação.
 .DESCRIPTION
@@ -8,14 +8,15 @@
     Salve este arquivo como "main.ps1".
 #>
 
+
 function Main {
     Clear-Host
-    $pastaScripts = ".\Scripts"  # Ajuste o caminho se necessário
+    $pastaScripts = ".\scripts"  # Ajuste o caminho se necessário
 
     do {
         # Exibe o menu
         Write-Host "`n========== MENU PRINCIPAL ==========" -ForegroundColor Cyan
-        Write-Host " 1 - Verificar status do sistema"
+        Write-Host " 1 - Versão do Java "
         Write-Host " 2 - Limpar arquivos temporários"
         Write-Host " 3 - Fazer backup de pasta"
         Write-Host " 4 - Listar processos em execução"
@@ -32,8 +33,8 @@ function Main {
 
         switch ($opcao) {
             '1' {
-                Write-Host "Executando: Verificar status do sistema..." -ForegroundColor Yellow
-                & "$pastaScripts\VerificarSistema.ps1"
+                Write-Host "Verificar versão do Java" -ForegroundColor Yellow
+                & "$pastaScripts\javaVersion.ps1"
             }
             '2' {
                 Write-Host "Executando: Limpar arquivos temporários..." -ForegroundColor Yellow
