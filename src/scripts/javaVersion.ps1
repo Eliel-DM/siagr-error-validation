@@ -25,15 +25,15 @@ elseif ($versionLine -match "64"){
 
         switch ($opcao) {
             '1' {
-                Write-Host "Realizando a remoção " -ForegroundColor Yellow
+                Write-Host "Realizando a remoção do Java 64 bits e instalando o 32 bits!" -ForegroundColor Yellow
                 & "$pastaScripts\JavaRemoveAndInstall\RemoveX64AndInstallX86.ps1"
             }
             '2' {
-                Write-Host "Realizando o procedimento solicitado..." -ForegroundColor Yellow
+                Write-Host "Realizando a instalação do java 32 bits!" -ForegroundColor Yellow
                 & "$pastaScripts\JavaRemoveAndInstall\InstallX86AndSetDefault.ps1"
             }
             '0' {
-                Write-Host "Saindo do programa..." -ForegroundColor Green
+                Write-Host "Saindo do menu de versão do Java." -ForegroundColor Green
                 break
             }
             default {
@@ -43,16 +43,14 @@ elseif ($versionLine -match "64"){
         }
         Write-Host ""
     } while ($opcao -ne '0')
-}
-    
 } else {
+
     Write-Host "Não foi identificada nenhuma versão do Java instalada!" -ForegroundColor Red
 
      do {
         # Exibe o menu
         Write-Host "`n========== MENU PRINCIPAL ==========" -ForegroundColor Cyan
-        Write-Host " 1 - Versão do Java "
-        Write-Host " 2 - Limpar arquivos temporários"
+        Write-Host " 1 - Instalar o Java 32 bits (X86) "
         Write-Host " 0 - Sair"
         Write-Host "=====================================" -ForegroundColor Cyan
 
@@ -60,15 +58,11 @@ elseif ($versionLine -match "64"){
 
         switch ($opcao) {
             '1' {
-                Write-Host "Verificar versão do Java" -ForegroundColor Yellow
+                Write-Host "Realizando a instalação do java 32 bits!" -ForegroundColor Yellow
                 & "$pastaScripts\javaVersion.ps1"
             }
-            '2' {
-                Write-Host "Executando: Limpar arquivos temporários..." -ForegroundColor Yellow
-                & "$pastaScripts\LimparTemp.ps1"
-            }
             '0' {
-                Write-Host "Saindo do programa..." -ForegroundColor Green
+                Write-Host "Saindo do menu de versão do Java ..." -ForegroundColor Green
                 break
             }
             default {
@@ -78,10 +72,9 @@ elseif ($versionLine -match "64"){
         }
         Write-Host ""
     } while ($opcao -ne '0')
+
 }
-}
 
 
-
-
+  
 Read-Host "`nPressione Enter para continuar"

@@ -11,7 +11,7 @@
 
 function Main {
     Clear-Host
-    $pastaScripts = ".\scripts"  # Ajuste o caminho se necessário
+    $pastaScripts = ".\src\scripts"  # Ajuste o caminho se necessário
 
     do {
         # Exibe o menu
